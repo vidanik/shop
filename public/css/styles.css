@@ -1,0 +1,170 @@
+/* public/css/style.css */
+
+body {
+    font-family: 'Lateef', sans-serif; /* می‌توانید از فونت دلخواه خود استفاده کنید */
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* توزیع فضای بین فرم جستجو و عنوان */
+    align-items: center;
+    padding: 20px;
+}
+
+header {
+    background-color: #a6b2be9d;
+    color: white;
+    padding: 7px;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.shop-title {
+    margin: 0;
+    font-size: 2.5em;
+    border-bottom: 2px solid rgb(8, 8, 8);
+    padding-bottom: 10px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: flex-start; /* جستجو را به سمت چپ منتقل کرد */
+    align-items: center;
+}
+
+.search-form input[type="text"] {
+    padding: 10px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px; /* فاصله بین ورودی و دکمه */
+}
+
+.search-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #523adb;
+    color: white;
+    cursor: pointer;
+}
+
+.header-underline {
+    border: none;
+    height: 2px;
+    background-color: rgb(14, 11, 11);
+    margin: 0;
+}
+
+nav {
+    background-color: #312b2b;
+    overflow: hidden;
+    font-size: 1.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #767b81;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+.footer-container {
+    display: flex;
+    justify-content: space-around; /* توزیع فضای بین ستون‌ها */
+    padding: 2px 0;
+    font-size: 1.4em;
+
+    border-top: 1px solid #161616; /* خط بالای فوتر */
+}
+
+.footer-column {
+    flex: 1; /* هر ستون فضای برابر بگیرد */
+    padding: 0 10px; /* فاصله داخلی برای ستون‌ها */
+}
+
+.footer-column h3 {
+    margin-bottom: 5px; /* فاصله زیر عنوان */
+}
+
+.footer-column ul {
+    list-style-type: none; /* حذف لیست‌نشده */
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li a {
+    color: rgb(22, 22, 22);
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline; /* زیر خط برای لینک‌ها در حالت هاور */
+}
+
+
+
+
+
+
+
+
+
+
+/* styles.css */
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: calc(33.333% - 20px); /* سه محصول در هر ردیف */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product h2 {
+    font-size: 20px;
+}
+
+.product p {
+    font-size: 14px;
+}
