@@ -12,3 +12,7 @@ Route::get('/', function () {
 Route::get('/blog/products', function () {
     return view('blog.products'); // صفحه محصولات را بارگذاری می‌کند
 });
+
+Route::get('/blog/products', function () {
+    return view('blog.products'); // صفحه محصولات را بارگذاری می‌کند
+});
