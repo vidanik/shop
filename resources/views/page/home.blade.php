@@ -10,19 +10,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    @include('partials.header')
+    @extends('layouts.app')
 
-    <main>
-        <h2>به ویداییل شاپ خوش آمدید!</h2>
-        <p>محصولات ویژه و خدمات منحصر به فرد ما را بررسی کنید.</p> @include('partials.footer')
+@section('title', 'صفحه اصلی')
 
-        @include('partials.footer')
+@section('content')
+<h2>به ویداییل شاپ خوش آمدید!</h2>
+<div class="product-list">
+    @foreach($products as $product)
+        <div class="product">
+            <h2>{{ $product->name }}</h2>
+            <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" />
+            <p>{{ $product->description }}</p>
+            <p>قیمت: {{ number_format($product->price) }} تومان</p>
+            <a href="#" class="buy-link">خرید کنید</a>
+        </div>
+    @endforeach
+</div>
+@endsection
 
-    </main>
-</body>
-
-</html>

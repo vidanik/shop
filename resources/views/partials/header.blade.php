@@ -11,8 +11,8 @@
 </header>
 <nav>
     <ul>
-        <li><a href="#">زنانه</a></li>
-        <li><a href="#">مردانه</a></li>
-        <li><a href="#">بچه گانه</a></li>
+        <li><a href="{{ route('cart.sabadkharid') }}">سبد خرید</a></li>
+        <li><a href="{{ route('login') }}">ورود</a></li> <!-- لینک به صفحه ورود -->
+        <li><a href="#">دسته بندی محصولات </a></li>
     </ul>
 </nav>

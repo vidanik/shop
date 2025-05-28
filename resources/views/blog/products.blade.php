@@ -6,23 +6,33 @@
     @include('partials.header')
 </header>
 
+     @extends('layouts.app') <!-- فرض می‌کنیم هدر و فوتر شما در این لایه است -->
+
+@section('content')
+<header>
+    @include('partials.header')
+</header>
+
+<main>
+   @extends('layouts.app')
+
+@section('title', 'محصولات')
+
+@section('content')
 <main>
     <h1>محصولات</h1>
     <div class="products-container">
-        <!-- لیست محصولات شما در اینجا قرار می‌گیرد -->
-        <div class="product">
-            <h2>محصول 1</h2>
-            <p>توضیحاتی درباره محصول 1.</p>
-        </div>
-        <div class="product">
-            <h2>محصول 2</h2>
-            <p>توضیحاتی درباره محصول 2.</p>
-        </div>
-        <div class="product">
-            <h2>محصول 3</h2>
-            <p>توضیحاتی درباره محصول 3.</p>
-        </div>
-        <!-- می‌توانید محصولات بیشتری اضافه کنید -->
+        @foreach($products as $product)
+            <div class="product">
+                <h2>{{ $product->name }}</h2>
+                <p>{{ $product->description }}</p>
+                <p>قیمت: {{ number_format($product->price) }} تومان</p>
+                <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" />
+            </div>
+        @endforeach
+    </div>
+</main>
+@endsection
     </div>
 </main>
 
@@ -30,3 +40,4 @@
     @include('partials.footer')
 </footer>
 @endsection
+<

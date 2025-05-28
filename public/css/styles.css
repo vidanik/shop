@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #ffffff;
-    color: #333;
+    color: #000000;
 }
 
 .container {
@@ -16,7 +16,7 @@ body {
 }
 
 header {
-    background-color: #a6b2be9d;
+    background-color: lab(83.69% -14.78 -14.94 / 0.616);
     color: white;
     padding: 7px;
     font-size: 1.3em;
@@ -26,7 +26,7 @@ header {
 .shop-title {
     margin: 0;
     font-size: 2.5em;
-    border-bottom: 2px solid rgb(8, 8, 8);
+    border-bottom: 2px solid rgb(39, 75, 41);
     padding-bottom: 10px;
 }
 
@@ -48,7 +48,7 @@ header {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #523adb;
+    background-color: #e499d1;
     color: white;
     cursor: pointer;
 }
@@ -56,12 +56,12 @@ header {
 .header-underline {
     border: none;
     height: 2px;
-    background-color: rgb(14, 11, 11);
+    background-color: rgb(3, 3, 3);
     margin: 0;
 }
 
 nav {
-    background-color: #312b2b;
+    background-color: #e091cf;
     overflow: hidden;
     font-size: 1.5em;
 }
@@ -94,7 +94,7 @@ main {
 }
 
 footer {
-    background-color: #767b81;
+    background-color: lab(83.69% -14.78 -14.94 / 0.616);
     color: white;
     text-align: center;
     padding: 10px;
@@ -147,24 +147,231 @@ footer {
 
 
 
-/* styles.css */
 .products-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px; /* فاصله کمتر بین محصولات */
+    margin:20px; /* فاصله مساوی از دو طرف */
+}
+
+.product-list {
+    display: grid; /* استفاده از گرید */
+    grid-template-columns: repeat(4, 1fr); /* سه ستون با عرض مساوی */
+    gap: 10px; /* فاصله کمتر بین محصولات */
+    margin: 20px; /* فاصله از حاشیه */
 }
 
 .product {
-    border: 1px solid #ddd;
-    padding: 10px;
-    width: calc(33.333% - 20px); /* سه محصول در هر ردیف */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ffffff; /* حاشیه برای محصولات */
+    border-radius: 5px; /* گوشه‌های گرد */
+    padding: 15px; /* فاصله داخلی */
+    background-color: #ffffff; /* رنگ پس‌زمینه */
+    transition: transform 0.3s; /* انیمیشن برای اثر هاور */
+    text-align: center; /* وسط‌چین کردن محتوا */
+    width: calc(75.333% - 10px); /* بزرگتر کردن عرض محصولات */
 }
 
+/* اثر هاور برای محصولات */
+.product:hover {
+    transform: scale(1.05); /* بزرگ‌نمایی هنگام هاور */
+}
+
+/* استایل عنوان محصول */
 .product h2 {
-    font-size: 20px;
+    font-size: 1.5em; /* اندازه فونت عنوان */
+    margin: 10px 0; /* فاصله بالا و پایین */
 }
 
+/* استایل تصویر محصول */
+.product img {
+    max-width: 100%; /* تصویر را در حداکثر عرض */
+    height: auto; /* حفظ نسبت تصویر */
+    border-radius: 5px; /* گوشه‌های گرد برای تصویر */
+    margin-bottom: 30px; /* فاصله زیر تصویر */
+}
+
+/* استایل توضیحات و قیمت */
 .product p {
-    font-size: 14px;
+    margin: 10px 0; /* فاصله بالا و پایین */
+}
+
+/* استایل لینک خرید */
+.buy-link {
+    display: inline-block; /* نمایش به صورت بلوک */
+    padding: 10px 15px; /* فاصله داخلی */
+    color: #fff; /* رنگ متن */
+    background-color: #28a745; /* رنگ پس‌زمینه دکمه */
+    border-radius: 5px; /* گوشه‌های گرد */
+    text-decoration: none; /* حذف خط زیر لینک */
+    transition: background-color 0.3s; /* انیمیشن برای اثر هاور */
+}
+
+/* اثر هاور برای لینک خرید */
+.buy-link:hover {
+    background-color: #218838; /* رنگ تغییر یافته هنگام هاور */
+}
+
+/* ریسپانسیو برای تبلت */
+@media (max-width: 768px) {
+    .product-list {
+        grid-template-columns: repeat(2, 1fr); /* دو ستون در تبلت */
+    }
+}
+
+/* ریسپانسیو برای موبایل */
+@media (max-width: 480px) {
+    .product-list {
+        grid-template-columns: repeat(1, 1fr); /* یک ستون در موبایل */
+    }
+}
+
+/*فرم ثبت نام*/
+
+/* استایل‌های فرم ثبت نام */
+.register-container {
+    background-color: #bbdee2;
+        background-color: #eed2e8; /* پس‌زمینه روشن */
+
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(230, 7, 7, 0.1);
+    width: 400px; /* عرض فرم */
+    margin: 200px auto; /* مرکز کردن فرم */
+        direction: rtl; /* راست‌چین کردن محتوا */
+
+}
+
+.register-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #050505; /* رنگ عنوان */
+}
+
+.register-container .form-group {
+    margin-bottom: 20px; /* فاصله بین گروه‌های فرم */
+}
+
+.register-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold; /* ضخیم کردن متن */
+}
+
+.register-container input[type="text"],
+.register-container input[type="email"],
+.register-container input[type="password"] {
+    width: 100%; /* عرض کامل */
+    padding: 10px; /* فاصله داخلی */
+    border: 1px solid #ccc; /* حاشیه */
+    border-radius: 4px; /* گوشه‌های گرد */
+    box-sizing: border-box; /* تنظیم باکس */
+}
+
+.register-container input[type="text"]:focus,
+.register-container input[type="email"]:focus,
+.register-container input[type="password"]:focus {
+    border-color: #239235; /* رنگ حاشیه در حالت فوکوس */
+    outline: none; /* حذف حاشیه پیش‌فرض */
+}
+
+.register-container button {
+    width: 100%; /* عرض کامل */
+    padding: 10px;
+    background-color: #32b363; /* رنگ دکمه */
+    color: rgb(8, 0, 0); /* رنگ متن دکمه */
+    border: none; /* حذف حاشیه */
+    border-radius: 4px; /* گوشه‌های گرد */
+    cursor: pointer; /* نشانگر دکمه */
+    font-size: 20px; /* اندازه متن */
+}
+
+.register-container button:hover {
+    background-color: #45a049; /* رنگ دکمه در حالت هاور */
+}
+
+.register-container p {
+    text-align: center; /* مرکز کردن متن */
+    margin-top: 15px; /* فاصله بالا */
+}
+
+.register-container a {
+    color: #4CAF50; /* رنگ لینک */
+    text-decoration: none; /* حذف خط زیر */
+}
+
+.register-container a:hover {
+    text-decoration: underline; /* خط زیر در حالت هاور */
+}
+
+
+
+/* CSS مختص به صفحه تأیید کد */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #baecf0; /* پس‌زمینه روشن */
+    margin: 0;
+    padding: 0;
+}
+
+.verify-container {
+    background-color: #ecd5e4; /* رنگ پس‌زمینه فرم */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px; /* عرض فرم */
+    margin: 100px auto; /* مرکز کردن فرم */
+}
+
+.verify-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333; /* رنگ عنوان */
+}
+
+.form-group {
+    margin-bottom: 20px; /* فاصله بین گروه‌های فرم */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold; /* ضخیم کردن متن */
+    text-align: right; /* راست‌چین کردن متن */
+}
+
+.form-group input[type="text"] {
+    width: 100%; /* عرض کامل */
+    padding: 10px; /* فاصله داخلی */
+    border: 1px solid #ccc; /* حاشیه */
+    border-radius: 4px; /* گوشه‌های گرد */
+    box-sizing: border-box; /* تنظیم باکس */
+    text-align: right; /* راست‌چین کردن متن ورودی */
+    transition: border-color 0.3s; /* انیمیشن تغییر رنگ حاشیه */
+}
+
+.form-group input[type="text"]:focus {
+    border-color: #591d9e; /* رنگ حاشیه در حالت فوکوس */
+    outline: none; /* حذف حاشیه پیش‌فرض */
+}
+
+button {
+    width: 100%; /* عرض کامل */
+    padding: 10px;
+    background-color: #4CAF50; /* رنگ دکمه */
+    color: #ffffff; /* رنگ متن دکمه */
+    border: none; /* حذف حاشیه */
+    border-radius: 4px; /* گوشه‌های گرد */
+    cursor: pointer; /* نشانگر دکمه */
+    font-size: 18px; /* اندازه متن */
+    transition: background-color 0.3s; /* انیمیشن تغییر رنگ */
+}
+
+button:hover {
+    background-color: #45a049; /* رنگ دکمه در حالت هاور */
+}
+
+#timer {
+    text-align: center; /* مرکز کردن متن */
+    margin-top: 15px; /* فاصله بالا */
+    color: #777; /* رنگ متن تایمر */
 }
